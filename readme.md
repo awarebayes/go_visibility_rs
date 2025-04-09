@@ -133,7 +133,8 @@ println!("{}", s.PublicField);  // Works!
 ## 🔮 Future Plans
 
 - `#[go_error_handling]` — Replace `Result` with `if err != nil`  
-- `#[go_gc]` — Just `malloc()` everywhere and pray  
+- `#[go_gc]` — Just `malloc()` everywhere and pray
+- `go!` macro for go code inlining, with support for [TinyGo](https://tinygo.org/) LLVM
 
 ---
 
