@@ -2,6 +2,27 @@
 Because Rust's `pub` keyword was just too explicit 🔥  
 Finally, a revolutionary crate that brings Go's brilliant visibility conventions to Rust — because who needs explicit keywords when you can just Capitalize Everything?
 
+```rust
+use go_visibility_macro::go_visibility;
+
+#[go_visibility]
+struct MyStruct {  // Automagically `pub`!
+    PublicField: i32,  // Also `pub`!
+    private_field: i32,  // Not `pub` (how sad)
+}
+
+#[go_visibility]
+impl MyStruct {
+    fn New() -> Self {  // `pub` because it's uppercase!
+        Self { PublicField: 42, private_field: 69 }
+    }
+
+    fn get_secret(&self) -> i32 {  // Still private (loser)
+        self.private_field
+    }
+}
+```
+
 ---
 
 ## ✨ Features ✨
